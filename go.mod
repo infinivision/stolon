@@ -93,3 +93,5 @@ require (
 	k8s.io/client-go v0.0.0-20171026121518-35ccd4336052
 	k8s.io/kube-openapi v0.0.0-20180201014056-275e2ce91dec // indirect
 )
+
+go 1.13

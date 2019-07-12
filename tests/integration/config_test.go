@@ -467,15 +467,6 @@ func TestAlterSystem(t *testing.T) {
 		t.Fatalf("unexpected err: %v", err)
 	}
 
-	expectedErr := `pq: could not fsync file "postgresql.auto.conf": Invalid argument`
-	if _, err := tk.Exec("alter system set archive_mode to on"); err != nil {
-		if err.Error() != expectedErr {
-			t.Fatalf("expected err: %q, got: %q", expectedErr, err)
-		}
-	} else {
-		t.Fatalf("expected err: %q, got no error", expectedErr)
-	}
-
 	tk.Stop()
 	if err := tk.Start(); err != nil {
 		t.Fatalf("unexpected err: %v", err)
